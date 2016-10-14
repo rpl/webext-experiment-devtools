@@ -1,0 +1,31 @@
+[
+  {
+    "namespace": "experiments.devtools",
+    "description": "simple experimental api to open the developer toolbox",
+    "permissions": ["experiments.devtools"],
+    "functions": [
+      {
+        "name": "open",
+        "type": "function",
+        "description": "Open the developer tools on the current active tab",
+        "async": "callback",
+        "parameters": [
+          {
+            "type": "string",
+            "name": "panel",
+            "enum": ["webconsole", "inspector", "jsdebugger"],
+            "optional": true,
+            "description": "The the panel to be opened (\"console\" by default)."
+          },
+          {
+            "type": "function",
+            "name": "callback",
+            "optional": true,
+            "description": "Called after the developer toolbox has been opened.",
+            "parameters": []
+          }
+        ]
+      }
+    ]
+  }
+]
